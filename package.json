@@ -1,0 +1,24 @@
+{
+  "name": "ai-mr-release-intelligence",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AI Merge Request / Pull Request release intelligence analyzer",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "npm run dev --workspace @ai-mr/api",
+    "dev:web": "npm run dev --workspace @ai-mr/web",
+    "db:migrate": "npm run db:migrate --workspace @ai-mr/api",
+    "build": "npm run build --workspace @ai-mr/shared && npm run build --workspace @ai-mr/api && npm run build --workspace @ai-mr/web",
+    "postinstall": "npm run build --workspace @ai-mr/shared"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
