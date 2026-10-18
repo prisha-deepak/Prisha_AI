@@ -54,26 +54,7 @@ Copy or edit:
 apps/api/.env
 ```
 
-Example OCI configuration:
 
-```env
-DATABASE_URL="file:./dev.db"
-PORT=4000
-
-AI_PROVIDER=oci
-AI_CHAT_MODEL=
-
-SELF_HEALING_OCI_ENABLED=true
-SELF_HEALING_OCI_CHAT_REQUEST_TYPE=cohere
-SELF_HEALING_OCI_TIMEOUT_MS=20000
-SELF_HEALING_OCI_TEMPERATURE=0.1
-SELF_HEALING_OCI_MAX_TOKENS=1000
-
-OCI_CONFIG_PATH="C:\Users\<your-user>\.oci\config"
-OCI_COMPARTMENT_ID="<your-compartment-ocid>"
-OCI_GENAI_ENDPOINT="https://inference.generativeai.<region>.oci.oraclecloud.com"
-OCI_MODEL_ID="<your-oci-generative-ai-model-ocid>"
-```
 
 OpenAI variables are still available as fallback options:
 
